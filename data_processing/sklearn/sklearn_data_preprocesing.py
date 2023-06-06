@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 input_data_path = "insurance.csv"
-df = pd.read_csv("insurance.csv")
+df = pd.read_csv(input_data_path)
 
 
 #First, we need to import the scale from preprocessing that belongs to sklearn
@@ -21,4 +21,5 @@ charges_scaled_range = my_created_transformer.transform(df.charges.values.reshap
 
 df['charges_scaled_range'] = charges_scaled_range
 
-df.to_csv("processed_insurance.csv")
+output_data_path = "processed_insurance.csv"
+df.to_csv(output_data_path)
